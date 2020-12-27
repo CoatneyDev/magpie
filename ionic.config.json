@@ -1,0 +1,7 @@
+{
+  "name": "straka",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
