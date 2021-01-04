@@ -1,0 +1,39 @@
+<ion-content>
+  <ion-searchbar
+    autocomplete="on"
+    inputmode="search"
+    spellcheck="true"
+    class="items-searchbar"
+    animated
+    mode="ios"
+    type="text"
+    debounce="500"
+    [(ngModel)]="searchQuery"
+    placeholder="Word Search..."
+    #searchBox
+    (ionChange)="filter($event)"
+    (ionInput)="filter($event)"
+    (ionClear)="onClear($event)"
+  ></ion-searchbar>
+
+  <ion-virtual-scroll [items]="words" approxItemHeight="45px">
+    <ion-card *virtualItem="let item; let itemBounds = bounds">
+      <!--div>
+      <ion-img src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.radiostraka.com%2Fimg%2FS2.png&imgrefurl=http%3A%2F%2Fwww.radiostraka.com%2F&tbnid=Urh9TYwIO6SZWM&vet=12ahUKEwj7iPCPve_tAhVSmp4KHRrVAXAQMygBegUIARCgAQ..i&docid=hUnqcWJj56Xr_M&w=430&h=636&q=s%20straka&client=firefox-b-1-d&ved=2ahUKEwj7iPCPve_tAhVSmp4KHRrVAXAQMygBegUIARCgAQ" height="50px" alt="S."></ion-img>
+    </div-->
+      <ion-card-header>
+        <ion-card-title>{{ item.word }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+       <ion-list>
+        <ion-item><ion-label><code>{{ item.toDefinitionString() }}</code></ion-label></ion-item>
+        <ion-item><ion-label> {{ item.toFeatureString() }}</ion-label></ion-item>
+       
+       </ion-list>
+       
+      </ion-card-content>
+    </ion-card>
+  </ion-virtual-scroll>
+
+ 
+</ion-content>
