@@ -1,7 +1,7 @@
 
 # Welcome To Magpie!
 - `Created: Dec 29, 2020`
-- `Last Updated: Jan 3, 2021`
+- `Last Updated: Jan 5, 2021`
 
 Magpie is a project created to demo my pet frontend/angular techniques.
 The theme of the project is Puzzles!
@@ -36,26 +36,32 @@ The Anagram search is a good illustration of performance issues and the tradeoff
 We have a dictionary implemented as a key/value pair, with the key being the letter of the alphabet and the array being words beginning with that letter. This is implemented as an Object, which is a Hashtable
 in JS. Performance of lookup (also search, delete, insert) is Constant O(1). This helps us scan the dictionary for words, but it causes a problem in anagram search:
 
-We have a word such as 'cinema' and we take each letter of the alphabet one at a time and examine each word under that letter one at a time. This is a quadratic performance time O(n^2) requireing nested loops. This is not scalable.
+We have a word such as 'cinema' and we take each letter of the alphabet one at a time and examine each word under that letter one at a time. This is a quadratic performance time O(n^2) requireing nested loops. This is not scalable, so we can't perform this lookup each time the user searches for a word.
 
 We can solve that problem by creating a hash, and storing the hash as the key of an array of words
-which are anagrams of it and each other. 
+(which are anagrams of it and each other) inside the dictionary itself. 
 
 `'aceimn': ['iceman','cinema','anemic']`
 
 Our application compiles the dictionary containing our anagram/hash pairs only every time we add a word to the dictionary. This gives us the same O(1) Constant Time performance for lookup as we have with a
-dictionary lookup.
+dictionary lookup, but creates a space complexity tradeoff.So we have good time. But our dictionary is large. If we add other languages to search we can build a
+fast app but we are taking on a lot of bulk. 
 
-So we have good time. But our dictionary is large. If we add other languages to search we can build a
-fast app but we are taking a lot of bulk. A solution to this, for single word search apps, is to make two calls for a word search: all 'I' words as in 'iceman' and its hash 'aceimn' to grab the anagrams.
-since we have this we can store it in an empty local dictionary and continue working this way, filling
-only the parts of the dictionary which we have requested. In this way, if we call a word twice, we return
-the value previously requested instead of making another server hit and we spare ourselves from a huge data collection.
 
+## Fun Word Searches...
 
 ### Anagrams which are also Palindromes:
 
 `'add': ['add', 'dad']`
+
+### Anagrams
+
+`'aceimn': ['iceman','cinema','anemic']`
+
+### Palindromes
+
+`'level': ['level']`
+
 
 
 Puzzle Solving tools:
