@@ -12,7 +12,11 @@ export class DictionaryService {
   list: EnglishWordList;
   codeStr: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.getEnglishWords().subscribe((words) => {
+      this.list = words;
+    });
+  }
 
   // Name:
   // Inputs:
@@ -47,6 +51,10 @@ export class DictionaryService {
   // Description: Test if str1 is an anagram of str1
   public isAnagram(str1: string, str2: string): boolean {
     return this.hashAnagram(str1) === this.hashAnagram(str2);
+  }
+
+  public isAnagramInDictionary(word: string): boolean {
+    return Object.keys(this.list.anagrams).includes(this.hashAnagram(word));
   }
 
   // Name: hashAnagram

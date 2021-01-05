@@ -5,7 +5,7 @@ export class Word {
   definitions: Array<Definition>;
   features: Array<string>;
 
-  constructor(public word: string, private dictionary: DictionaryService) {
+  constructor(public name: string, private dictionary: DictionaryService) {
     this.definitions = new Array<Definition>();
     this.features = new Array<string>();
 
@@ -22,7 +22,7 @@ export class Word {
       new Definition("word", "language", "noun", ["a def"])
     );
 
-    if (this.dictionary.isPalindrome(this.word)) {
+    if (this.dictionary.isPalindrome(this.name)) {
       this.features.push("Palindrome");
     }
   }

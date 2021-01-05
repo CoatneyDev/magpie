@@ -17,18 +17,18 @@ The techniques I want to highlight are:
 
 I'll use these techniques in puzzles and puzzle solving, such as the popular puzzle books. These include word lookups, word games, ciphers, mazes, crosswords etc.
 
-[x] Word Search <br />
+1. [x] Word Search <br />
     &nbsp;&nbsp;&nbsp;x Palindrome finder <br />
     &nbsp;&nbsp;&nbsp;x Anagram finder <br />
     &nbsp;&nbsp;&nbsp;- Word Definitions <br />
 
-[ ] Ciphers <br />
+2. [ ] Ciphers <br />
     &nbsp;&nbsp;&nbsp;- RotX  <br />
     &nbsp;&nbsp;&nbsp;- Playfair <br />
 
-[ ] Mazes
+3. [ ] Mazes
 
-[ ] Crossword Puzzles
+4. [ ] Crossword Puzzles
 
 ## Complexity & Optimization 
 The Anagram search is a good illustration of performance issues and the tradeoff between space and time. Here is our problem:
@@ -53,7 +53,7 @@ only the parts of the dictionary which we have requested. In this way, if we cal
 the value previously requested instead of making another server hit and we spare ourselves from a huge data collection.
 
 
-### Anagrams which are Palindromes:
+### Anagrams which are also Palindromes:
 
 `'add': ['add', 'dad']`
 
@@ -62,7 +62,8 @@ Puzzle Solving tools:
 1. [x] Anagram finder
 2. [x] Palindrome identifier
 3. [ ] Internationalization: English, French, Czech, Spanish, Latin, Greek word finder
-4. [ ] Playfair cipher decription
+4. [ ] Playfair cipher decription 
+<br />
 ... more to come
 
 Puzzles:

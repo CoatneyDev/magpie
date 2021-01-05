@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 import { WordFeaturesComponent } from '../components/wordfeatures/wordfeatures.component';
+import { WordComponent } from '../components/word/word.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,6 @@ import { WordFeaturesComponent } from '../components/wordfeatures/wordfeatures.c
     ExploreContainerComponentModule,
     Tab1PageRoutingModule
   ],
-  declarations: [Tab1Page, WordFeaturesComponent]
+  declarations: [Tab1Page, WordFeaturesComponent, WordComponent]
 })
 export class Tab1PageModule {}

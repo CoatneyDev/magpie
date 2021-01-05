@@ -1,0 +1,25 @@
+
+  <ion-card>
+    <!--div>
+   <ion-img src="https://www.google.com/imgres?imgurl=http%3A%2F%2Fwww.radiostraka.com%2Fimg%2FS2.png&imgrefurl=http%3A%2F%2Fwww.radiostraka.com%2F&tbnid=Urh9TYwIO6SZWM&vet=12ahUKEwj7iPCPve_tAhVSmp4KHRrVAXAQMygBegUIARCgAQ..i&docid=hUnqcWJj56Xr_M&w=430&h=636&q=s%20straka&client=firefox-b-1-d&ved=2ahUKEwj7iPCPve_tAhVSmp4KHRrVAXAQMygBegUIARCgAQ" height="50px" alt="S."></ion-img>
+  </div-->
+    <ion-card-header>
+      <ion-card-title>{{ word.name | uppercase }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item
+          ><ion-label
+            >Definitions:
+            <code>{{ word.toDefinitionString() }}</code></ion-label
+          ></ion-item
+        >
+        <ion-item
+          ><ion-label
+            >Features: {{ word.toFeatureString() }}</ion-label
+          ></ion-item
+        >
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+

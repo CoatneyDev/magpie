@@ -10,7 +10,12 @@ export class WordFactory {
   // Runtime Complexity: O(1)
   // Desription: Converts a string into a Word obj
   createWord(word: string): Word {
-    return new Word(word, this.dictionary);
+    let wd = new Word(word, this.dictionary);
+
+    if (this.dictionary.isAnagramInDictionary(word)) {
+      wd.features.push("Anagram");
+    }
+    return wd;
   }
 
   // Name: createWordArray
